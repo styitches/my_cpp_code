@@ -33,8 +33,8 @@ void test01(){
     Person p2(p1);
 }
 //值传递的方式给函数参数传值
+//值传递的本质的创建一个副本
 void doWork(Person p){
-
 }
 void test02(){
     Person p; //默认构造
@@ -44,7 +44,7 @@ void test02(){
 Person doWork2(){
     Person p1;
     //cout << &p1 << endl;
-    return p1; //返回的时候会拷贝副本给左值
+    return p1; //返回的时候会拷贝副本给左值    返回时候创建了一个副本进行返回，不会影响原对象
 }
 void test03(){
     Person p = doWork2();
@@ -52,6 +52,6 @@ void test03(){
 }
 int main (){
     //test01();
-    //test02();
+    // test02();
     test03();
 }
